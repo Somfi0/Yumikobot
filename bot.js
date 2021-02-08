@@ -12,7 +12,7 @@ client.on("ready", function () {
         client.user.setPresence({
           status: "dnd",
           activity: {
-            type: "PLAYING",
+            type: "LISTENING",
             name: "Смотрю за сервером Yumiko "
           }
         })
