@@ -13,7 +13,7 @@ client.on("ready", function () {
           status: "dnd",
           activity: {
             type: "PLAYING",
-            name: "Смотрю за бедным Дэном "
+            name: "Смотрю за бедным сервером ***Yumiko*** "
           }
         })
     });
