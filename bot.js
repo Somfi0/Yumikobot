@@ -10,9 +10,9 @@ client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась! `);
         client.user.setStatus("online")
         client.user.setPresence({
-          status: "dnd",
+          status: "online",
           activity: {
-            type: "LISTENING",
+            type: "WATCHING",
             name: "Смотрю за сервером Yumiko "
           }
         })
