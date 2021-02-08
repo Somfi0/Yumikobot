@@ -8,12 +8,12 @@ const comms = require("./commands.js");
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась! `);
-        client.user.setStatus("dnd")
+        client.user.setStatus("online")
         client.user.setPresence({
           status: "dnd",
           activity: {
             type: "WATCHING",
-            name: "Смотрю за сервером Yumiko "
+            name: "за сервером Yumiko "
           }
         })
     });
