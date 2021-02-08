@@ -8,9 +8,9 @@ const comms = require("./commands.js");
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась! `);
-        client.user.setStatus("online")
+        client.user.setStatus("dnd")
         client.user.setPresence({
-          status: "online",
+          status: "dnd",
           activity: {
             type: "WATCHING",
             name: "за сервером Yumiko "
