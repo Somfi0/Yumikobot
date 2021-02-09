@@ -100,8 +100,6 @@ function rules(client,mess,args) {
     "image": {
       "url": "https://image.myanimelist.net/ui/7TVWLJ4cRvwHjFyWCI7sZ3G467SS2zDvZFJphjo-D0DRvcd1YTUL19I3II58o3HhCSvOs-ervoLsAMptcxPGUsskzlwbvqIowa4aIlfCN4vOpAQoIVrhH-YcHCyWVQ8T"
     },
-  }}),
-    mess.channel.send({embed: {
     color: ("#f5ec42"),
     title: "Основные правила:",
     "footer": {
