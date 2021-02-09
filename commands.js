@@ -165,9 +165,10 @@ var comms_list = [{
   out: partntext,
   about: "pox",
 },
-  name: "rules",
+{  name: "rules",
   out: rules,
   about: "server rules"
+},
 ];
 
 
