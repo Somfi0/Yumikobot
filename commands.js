@@ -93,41 +93,7 @@ function partntext(client,mess,args) {
     },
   }});
 }
-function rules(client,mess,args) {
-  mess.channel.send({embed: {
-    color: ("#f5ec42"),
-    title: "Правила:",
-    "image": {
-      "url": "https://image.myanimelist.net/ui/7TVWLJ4cRvwHjFyWCI7sZ3G467SS2zDvZFJphjo-D0DRvcd1YTUL19I3II58o3HhCSvOs-ervoLsAMptcxPGUsskzlwbvqIowa4aIlfCN4vOpAQoIVrhH-YcHCyWVQ8T"
-    },
-  }});
-}
-  mess.channel.send({embed: {
-    color: ("#f5ec42"),
-    title: "Основные правила:",
-    "footer": {
-      "text": "За нарушение в многократном виде вышеперечисленных правил вам будет отключена возможность заходить в голосовые каналы, а в особо тяжёлых случаях вы будете забанены."
-    },
-    "fields": [
-      {
-          "name": "1. Прослушивание музыки запрещено вне каналов для музыки.",
-          "value": "```Наказание: варн+кик с канала.```"
-      },
-      {
-          "name": "2. Запрещено каким-либо образом мешать общению в голосовых каналах.",
-          "value": "```Наказание: варн+кик с канала. В крайном случае мьют в голосовых чатах сроком от 1 часа до 3 дней.```"
-      },
-      {
-          "name": "3. Строго запрещено пытаться разжечь конфликт.",
-          "value": "```Наказание: варн+кик мьют на голосовые каналы сроком от 1 часа до 3 дней.```"
-      }
-      {
-          "name": "4. Если у вас посторонний шум на фоне и/или плохой микрофон.",
-          "value": "```Пользуйтесь push to talk. Иначе вы можете помешать людям, которые общаются в голосовом чате.```"
-      }
-    ]
-  }});
-}
+
 // Список команд //
 
 var comms_list = [{
@@ -164,11 +130,7 @@ var comms_list = [{
   name: "partntext",
   out: partntext,
   about: "pox",
-},
-{  name: "rules",
-  out: rules,
-  about: "server rules"
-},
+}
 ];
 
 
