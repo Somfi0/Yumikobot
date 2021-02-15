@@ -1,4 +1,5 @@
 module.exports = client => {
+  const chanelId = '810941652004503563'
   client.on('guildMemberAdd', member => {
     
     const messwelc = `Please welcome <@${member.id}> to the Yumiko`
