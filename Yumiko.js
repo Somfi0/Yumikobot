@@ -5,6 +5,7 @@ let config = require('./config.json'); // Подключаем файл с па�
 let token = config.token; // «Вытаскиваем» из него токен
 let prefix = config.prefix; // «Вытаскиваем» из него префикс
 const comms = require("./commands.js");
+const welcome = require('./welcome.js')
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `);
@@ -16,6 +17,7 @@ client.on("ready", function () {
             name: "за сервером Yumiko"
           }
         })
+        welcome(client)
     });
 
     client.on('message', (msg) => { // Реагирование на сообщения
