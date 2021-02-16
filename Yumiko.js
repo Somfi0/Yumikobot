@@ -5,7 +5,7 @@ let config = require('./config.json'); // Подключаем файл с па�
 let token = config.token; // «Вытаскиваем» из него токен
 let prefix = config.prefix; // «Вытаскиваем» из него префикс
 const comms = require("./commands.js");
-const welcome = require("./welcome.js");
+
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `)
@@ -36,5 +36,15 @@ client.on("ready", function () {
           }
         }
       });
+     client.on('guildMemberAdd', async newMember =>{
+     const channelId = '810941652004503563'
+     const welchannel = newMember.guild.channels.cache.get(channelId)
+     let welcmsg = new Discord.MessageEmbed()
+     welchannel.send(welcmsg)
+             let welcmsg = new Discord.MessageEmbed()
+             .setColor('#f5ec42')
+             .setTitle('Jeb')
+     welchannel.send(welcmsg)
+     });
 
     client.login(token);
