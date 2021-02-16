@@ -32,29 +32,35 @@ client.on("ready", function () {
           }
         }
       });
-client.on('guildMemberAdd', member => {
-client.on('message', 
-
-
-var role = member.guild.roles.find('811144795372126229', '811144795372126229'); // Variable to get channel ID
-member.addRole(role); // Adds the default role to members
-
-member.guild.channels.get('810941652004503563').send({embed: {
+client.on('guildMemberAdd', msg => { // Commands Go Inside The client.on('message', 
+msg => )
+msg.guild.channels.get('810941652004503563').send({embed: {
 color: 3447003,
-title: "**SERVER NAME** Welcome Bot!",
-url: "WEBSITE URL",
-description: "Welcome *" + member + "* to the **Server name** discord server!",
+author: {
+  name: client.user.username,
+  icon_url: client.user.avatarURL
+},
+title: "Welcome To ()!",
+url: "https://districtservices.net",
+description: "@MEMBER",
 fields: [{
-    name: "Information",
-    value: "Some info on the server"
+    name: "Fields",
+    value: "They can have different fields with small headlines."
+  },
+  {
+    name: "Masked links",
+    value: "You can put [masked links](http://google.com) inside of rich embeds."
+  },
+  {
+    name: "Markdown",
+    value: "You can put all the *usual* **__Markdown__** inside of them."
   }
 ],
 timestamp: new Date(),
 footer: {
   icon_url: client.user.avatarURL,
-  text: "© NAME OF SERVER 2018 - 2019"
+  text: "© Example"
 }
 }}); });
-  });
 
     client.login(token);
