@@ -98,7 +98,7 @@ function partntext(client,mess,args) {
 
 var comms_list = [{
   name: "ping",
-  out: pong,
+  out: ping,
   about: "Тестовая команда"
 },
 {
