@@ -9,14 +9,11 @@ const comms = require("./commands.js");
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `);
-        setInterval(() => {
-          targetGuild = client.guilds.get('786844750912815125')
-          if(targetGuild) {
-client.user.setPresence({
+        client.user.setPresence({
           status: "dnd",
           activity: {
             type: "WATCHING",
-            name: (`за сервером 𝘠𝘶𝘮𝘪𝘬𝘰 || На нем ${targetGuild.memberCount}`)
+            name: "за сервером 𝘠𝘶𝘮𝘪𝘬𝘰"
           }
         })
           }
