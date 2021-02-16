@@ -5,25 +5,20 @@ const crygif = require('./cry.json');
 // Команды //
 
 function serverinfo(client, mess, args) {
-const icon = guild.iconURL()
-function checkDays(date) {
-        let now = new Date();
-        let diff = now.getTime() - date.getTime();
-        let days = Math.floor(diff / 86400000);
-        return days + (days == 1 ? " день" : " дней") + " назад";
-    };
-const infembed = new Discord.MessageEmbed()
-.setColor('#f5ec42')
-.setTitle(`Информация о сервере ${name}`)
-.setThumbnail(icon)
-.setDescription(`**Участники:**\nВсего: ${mess.guild.members.cache.size}\nЛюдей: ${mess.guild.members.cache.filter(member => !member.user.bot).size}\nБотов: ${mess.guild.members.cache.filter(member => member.user.bot).size}`)
-        .addField("Каналы:", mess.guild.channels.cache.size, true)
-        .addField("Дата создания:", `${mess.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(mess.channel.guild.createdAt)})`, true)
-        .addField("Создатель:", `${mess.guild.owner.user.username}#${mess.guild.owner.user.discriminator}`, true)
-.setFooter(`Id: ${mess.guild.id}`)
-.setTimestamp()
+  const embed = new Discord.RichEmbed()
+  .setAuthor(mess.guild.name, mess.guild.iconURL)
+  .setColor(3447003)
+  .setDescription(`Owner: ${mess.guild.owner.user.tag} (${mess.guild.owner.id})`)
+  .addField('Member Count', `${mess.guild.memberCount - mess.guild.members.filter(m=>m.user.bot).size} (${mess.guild.members.filter(m=>m.user.bot).size} bots)`, true)
+  .addField('AFK Timeout', `${mess.guild.afkTimeout / 60} minutes`, true)
+  .addField('AFK Channel', `${mess.guild.afkChannelID === null ? 'No AFK Channel' : client.channels.get(mess.guild.afkChannelID).name} (${mess.guild.afkChannelID === null ? '' : mess.guild.afkChannelID})`, true)
+  .addField('Location', mess.guild.region, true)
+  .addField('Created', mess.guild.createdAt.toLocaleString(), true)
+  .addBlankField(true)
+  .setTimestamp()
+  .setFooter(client.user.username, client.user.avatarURL);
 
-mess.channel.send(infembed)
+  message.channel.send({embed});
 };
 
 function clear(client,mess,args) {
