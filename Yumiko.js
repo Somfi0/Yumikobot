@@ -20,6 +20,15 @@ client.on("ready", function () {
         
     });
 
+client.on('guildMemberAdd', (member) => {
+    let chanellId = '810941652004503563';
+    let embed = new Discord.MessageEmbed()
+    .setDescription(`<@${member.user.tag}> joined`)
+    .setColor('#f5ec42')
+    .setTimestamp()
+    client.channels.cache.get(chanellId).send(embed)
+});
+
     client.on('message', (msg) => { // Реагирование на сообщения
         if (msg.author.username != client.user.username && msg.author.discriminator != client.user.discriminator) {
           var comm = msg.content.trim() + " ";
