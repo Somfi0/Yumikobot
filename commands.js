@@ -6,7 +6,7 @@ const crygif = require('./cry.json');
 
 function test(client, mess, args) {
 var role = mess.guild.roles.cache.find(role => role.id === "805204670699012116");
-var user = mess.guild.members.cache.get('699865741276610630');
+var user = mess.guild.members.cache.get('806181426063867935');
 user.roles.add(role)
 };
 
