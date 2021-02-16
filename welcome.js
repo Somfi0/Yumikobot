@@ -3,13 +3,14 @@ module.exports = client => {
     
 client.on('guildMemberAdd', (member) => {
     console.log(member)
+	const channel = member.guild.channels.cache.get(channelId)
+    channel.send(welcomemsg)
 
-      const welcomemsg = new Discord.MessageEmbed()
+      let welcomemsg = new Discord.MessageEmbed()
       welcomemsg.setColor('#0099ff')
 	welcomemsg.setTitle('Some title')
 	welcomemsg.setDescription('Some description here')
     
-    const channel = member.guild.channels.cache.get(channelId)
-    channel.send(welcomemsg)
+    
 })
 }
