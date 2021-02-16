@@ -9,6 +9,7 @@ const welcome = require("./welcome.js");
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `);
+        
         welcome(client)
         client.user.setStatus("dnd")
         client.user.setPresence({
