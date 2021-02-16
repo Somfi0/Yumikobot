@@ -20,20 +20,10 @@ value: ''
 },
 {
 name: 'Участники:',
-value: 'Всего: ${memberCount}'
-},
-          {
-name: '',
-value: ''
-},
-          {
-name: '',
-value: ''
-},
-          {
-name: '',
-value: ''
-},)
+value: `Всего: ${memberCount}`,
+value: `Людей: ${mess.guild.members.filter(member => !member.user.bot).size}`,
+value: `Ботов: ${mess.guild.members.filter(member => member.user.bot).size}`, true)`,
+})
 
 mess.channel.send(infembed)
 };
