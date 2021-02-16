@@ -23,7 +23,7 @@ client.on("ready", function () {
 client.on('guildMemberAdd', (member) => {
     let chanellId = '810941652004503563';
     let embed = new Discord.MessageEmbed()
-    .setDescription(`<@${member.user.tag}> joined`)
+    .setDescription(`<@${member.id}> joined`)
     .setColor('#f5ec42')
     .setTimestamp()
     client.channels.cache.get(chanellId).send(embed)
