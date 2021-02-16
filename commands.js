@@ -4,21 +4,8 @@ const prefix = config.prefix; // «Вытаскиваем» префикс
 const crygif = require('./cry.json');
 // Команды //
 
-function serverinfo(client, mess, args) {
-  const embed = new Discord.RichEmbed()
-  .setAuthor(mess.guild.name, mess.guild.iconURL)
-  .setColor(3447003)
-  .setDescription(`Owner: ${mess.guild.owner.user.tag} (${mess.guild.owner.id})`)
-  .addField('Member Count', `${mess.guild.memberCount - mess.guild.members.filter(m=>m.user.bot).size} (${mess.guild.members.filter(m=>m.user.bot).size} bots)`, true)
-  .addField('AFK Timeout', `${mess.guild.afkTimeout / 60} minutes`, true)
-  .addField('AFK Channel', `${mess.guild.afkChannelID === null ? 'No AFK Channel' : client.channels.get(mess.guild.afkChannelID).name} (${mess.guild.afkChannelID === null ? '' : mess.guild.afkChannelID})`, true)
-  .addField('Location', mess.guild.region, true)
-  .addField('Created', mess.guild.createdAt.toLocaleString(), true)
-  .addBlankField(true)
-  .setTimestamp()
-  .setFooter(client.user.username, client.user.avatarURL);
-
-  message.channel.send({embed});
+function ping(client, mess, args) {
+  mess.channel.send('pong')
 };
 
 function clear(client,mess,args) {
@@ -27,7 +14,7 @@ function clear(client,mess,args) {
   if (!amount) return mess.channel.send('Вы не указали, сколько сообщений нужно удалить!'); // Проверка, задан ли параметр количества
   if (isNaN(amount)) return mess.channel.send('Это не число!'); // Проверка, является ли числом ввод пользователя 
   
-  if (amount > 100) return mess.channel.send('Вы не можете удалить 100 сообщений за раз'); // Проверка, является ли ввод пользователя числом больше 100
+  if (amount > 1000) return mess.channel.send('Вы не можете удалить 100 сообщений за раз'); // Проверка, является ли ввод пользователя числом больше 100
   if (amount < 1) return mess.channel.send('Вы должны ввести число больше чем 1'); // Проверка, является ли ввод пользователя числом меньше 1
   
   async function delete_messages() { // Объявление асинхронной функции
@@ -110,8 +97,8 @@ function partntext(client,mess,args) {
 // Список команд //
 
 var comms_list = [{
-  name: "serverinfo",
-  out: serverinfo,
+  name: "ping",
+  out: pong,
   about: "Тестовая команда"
 },
 {
