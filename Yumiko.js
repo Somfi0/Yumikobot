@@ -13,7 +13,7 @@ client.on('ready', () => {
         setInterval(() => {
           targetGuild = client.guilds.get('786844750912815125')
           if(targetGuild) {
-              client.user.setPresence({ game: { name: targetGuild.memberCount + ' people verifying!', type: 'WATCHING' }, status: 'idle'  })
+              client.user.setPresence({ game: { name: targetGuild.memberCount + ' people verifying!', type: 'WATCHING' }, status: 'dnd'  })
                     .then(console.log)
                     .catch(console.error);
           }
