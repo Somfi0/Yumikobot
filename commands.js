@@ -5,10 +5,9 @@ const crygif = require('./cry.json');
 // Команды //
 
 function test(client, mess, args) {
-let user = mess.content.split(' ')[1];
-if (user.includes('!')) user = user.slice(3, -1);
-else user = user.slice(2, -1);
-mess.guild.members.get(user).addRole('805204670699012116');
+var role = mess.guild.roles.cache.find(role => role.id === "805204670699012116");
+var user = mess.guild.members.cache.get('699865741276610630');
+user.roles.add(role)
 };
 
 function clear(client,mess,args) {
