@@ -20,8 +20,12 @@ const infembed = new Discord.MessageEmbed()
 .setTitle(`Информация о сервере ${name}`)
 .setThumbnail(icon)
 .setDescription(`**Участники:**\nВсего: ${mess.guild.members.cache.size}\nЛюдей: ${mess.guild.members.cache.filter(member => !member.user.bot).size}\nБотов: ${mess.guild.members.cache.filter(member => member.user.bot).size}`)
-.addField("Channels", mess.guild.channels.cache.size, true)
-.addField("Creation Date", `${mess.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(mess.channel.guild.createdAt)})`, true)
+        .addField("Каналы", mess.guild.channels.cache.size, true)
+        .addField("Дата создания:", `${mess.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(mess.channel.guild.createdAt)})`, true)
+        .addField("Создатель", `${mess.guild.owner.user.username}#${mess.guild.owner.user.discriminator}`, true)
+.setFooter(`Id: ${mess.guild.id}`)
+.setTimestamp()
+
 mess.channel.send(infembed)
 };
 
