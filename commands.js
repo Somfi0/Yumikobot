@@ -14,16 +14,8 @@ const infembed = new Discord.MessageEmbed()
 .setColor('#f5ec42')
 .setTitle(`Информация о сервере ${name}`)
 .setThumbnail(icon)
-.addFields({
-name: '',
-value: ''
-},
-{
-name: 'Участники:',
-value: `Всего: ${memberCount}`,
-value: `Людей: ${mess.guild.members.filter(member => !member.user.bot).size}`,
-value: `Ботов: ${mess.guild.members.filter(member => member.user.bot).size}`, true)`,
-})
+        .addField("Total | Humans | Bots", `${message.guild.members.cache.size} | ${message.guild.members.cache.filter(member => !member.user.bot).size} | ${message.guild.members.cache.filter(member => member.user.bot).size}`, true)
+
 
 mess.channel.send(infembed)
 };
