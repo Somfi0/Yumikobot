@@ -14,7 +14,7 @@ const infembed = new Discord.MessageEmbed()
 .setColor('#f5ec42')
 .setTitle(`Информация о сервере ${name}`)
 .setThumbnail(icon)
-.setDescription(`**Участники:**\Всего: ${mess.guild.members.cache.size}\nЛюдей: ${mess.guild.members.cache.filter(member => !member.user.bot).size}Ботов: ${mess.guild.members.cache.filter(member => member.user.bot).size}`)
+.setDescription(`**Участники:**\nВсего: ${mess.guild.members.cache.size}\nЛюдей: ${mess.guild.members.cache.filter(member => !member.user.bot).size}\nБотов: ${mess.guild.members.cache.filter(member => member.user.bot).size}`)
 
 mess.channel.send(infembed)
 };
