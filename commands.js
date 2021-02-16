@@ -5,7 +5,6 @@ const crygif = require('./cry.json');
 // Команды //
 
 function serverinfo(client, mess, args) {
-const { guild } = mess
 
 const {name, memberCount, owner} = guild
 const icon = guild.iconURL()
