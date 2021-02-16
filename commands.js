@@ -4,10 +4,17 @@ const prefix = config.prefix; // «Вытаскиваем» префикс
 const crygif = require('./cry.json');
 // Команды //
 
-function test(client, mess, args) {
-var role = mess.guild.roles.cache.find(role => role.id === "805204670699012116");
-var user = mess.guild.members.cache.get('806181426063867935');
-user.roles.add(role)
+function serverinfo(client, mess, args) {
+const { guild } = mess
+
+const {name, memberCount, owner} = guild
+const icon = guild.iconURL()
+
+const infembed = new Discord.MessageEmbed()
+.setTitle(`Информация о сервере ${name}`)
+.setThumbnail(icon)
+
+mess.channel.send(infembed)
 };
 
 function clear(client,mess,args) {
@@ -99,8 +106,8 @@ function partntext(client,mess,args) {
 // Список команд //
 
 var comms_list = [{
-  name: "test",
-  out: test,
+  name: "serverinfo",
+  out: serverinfo,
   about: "Тестовая команда"
 },
 {
