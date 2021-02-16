@@ -11,8 +11,29 @@ const {name, memberCount, owner} = guild
 const icon = guild.iconURL()
 
 const infembed = new Discord.MessageEmbed()
+.setColor('#f5ec42')
 .setTitle(`Информация о сервере ${name}`)
 .setThumbnail(icon)
+.addFields({
+name: '',
+value: ''
+},
+{
+name: 'Участники:',
+value: 'Всего: ${memberCount}'
+},
+          {
+name: '',
+value: ''
+},
+          {
+name: '',
+value: ''
+},
+          {
+name: '',
+value: ''
+},)
 
 mess.channel.send(infembed)
 };
