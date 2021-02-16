@@ -3,7 +3,7 @@ client.on('guildMemberAdd', member => {
 client.on('message', 
 
 
-var role = member.guild.roles.find('Yumiko', 'Yumiko'); // Variable to get channel ID
+var role = member.guild.roles.find('811144795372126229', '811144795372126229'); // Variable to get channel ID
 member.addRole(role); // Adds the default role to members
 
 member.guild.channels.get('810941652004503563').send({embed: {
