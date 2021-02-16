@@ -5,12 +5,9 @@ let config = require('./config.json'); // Подключаем файл с па�
 let token = config.token; // «Вытаскиваем» из него токен
 let prefix = config.prefix; // «Вытаскиваем» из него префикс
 const comms = require("./commands.js");
-const welcome = require('./welcome.js')
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `);
-        
-        welcome(client)
         client.user.setStatus("dnd")
         client.user.setPresence({
           status: "dnd",
@@ -35,5 +32,29 @@ client.on("ready", function () {
           }
         }
       });
+client.on('guildMemberAdd', member => {
+client.on('message', 
+
+
+var role = member.guild.roles.find('811144795372126229', '811144795372126229'); // Variable to get channel ID
+member.addRole(role); // Adds the default role to members
+
+member.guild.channels.get('810941652004503563').send({embed: {
+color: 3447003,
+title: "**SERVER NAME** Welcome Bot!",
+url: "WEBSITE URL",
+description: "Welcome *" + member + "* to the **Server name** discord server!",
+fields: [{
+    name: "Information",
+    value: "Some info on the server"
+  }
+],
+timestamp: new Date(),
+footer: {
+  icon_url: client.user.avatarURL,
+  text: "© NAME OF SERVER 2018 - 2019"
+}
+}}); });
+  });
 
     client.login(token);
