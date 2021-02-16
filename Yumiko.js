@@ -11,9 +11,9 @@ client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `) 
         let myGuild = client.guilds.get('786844750912815125');
         let memberCount = myGuild.memberCount;
-        client.user.setStatus("idk")
+        client.user.setStatus("dnd")
         client.user.setPresence({
-          status: "idk",
+          status: "dnd",
           activity: {
             type: "WATCHING",
             name: `за сервером Yumiko ${memberCount}`
