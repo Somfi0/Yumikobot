@@ -9,6 +9,6 @@ client.on('guildMemberAdd', (member) => {
     welcomemess.setTitle('**' + member.user.username + '** is now Among Us other **' + member.guild.memberCount + '** people')
     welcomemess.setImage('https://cdn.mos.cms.futurecdn.net/93GAa4wm3z4HbenzLbxWeQ-650-80.jpg.webp')
 
-    member.guild.channels.cache.find(i => i.name === 'greetings').send(welcomemess)
+    member.guild.channels.cache.find(i => i.name === channelId).send(welcomemess)
 })
 }
