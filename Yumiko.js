@@ -7,7 +7,8 @@ let prefix = config.prefix; // «Вытаскиваем» из него преф
 const comms = require("./commands.js");
 
 
-client.on('ready', () => {
+client.on("ready", function () {
+        console.log(` Господин я ${client.user.tag} включилась!! `);
         setInterval(() => {
           targetGuild = client.guilds.get('786844750912815125')
           if(targetGuild) {
