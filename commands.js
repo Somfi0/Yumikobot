@@ -5,8 +5,6 @@ const crygif = require('./cry.json');
 // Команды //
 
 function serverinfo(client, mess, args) {
-
-const {name, memberCount, owner} = guild
 const icon = guild.iconURL()
 function checkDays(date) {
         let now = new Date();
