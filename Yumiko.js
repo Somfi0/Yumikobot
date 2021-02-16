@@ -27,8 +27,8 @@ client.on('guildMemberAdd', (member) => {
     let color = '805885775764783154';
     let gender = '786896546247213056';
     let otzw = '786897485977223168';
-    var role = member.guild.roles.get('786864233357770762'); // Variable to get channel ID
-member.addRole(role);
+    let role = member.guild.roles.cache.find(role => role.name === '︴ 𝕐𝕦𝕞𝕚𝕜𝕠'); // Variable to get channel ID
+    member.roles.add(role);
     let embed = new Discord.MessageEmbed()
     .setDescription(`**▨Приветствую тебя <@${member.id}> на нашем сервере 𝘠𝘶𝘮𝘪𝘬𝘰. Здесь тебя ждёт дружелюбная администрация, крутое оформление сервера, а самое главное, наш собственный бот! Прежде чем ты начнёшь что-то делать, прочти ${member.guild.channels.cache.get(rules).toString()}, а потом можешь пойти общаться в ${member.guild.channels.cache.get(chat).toString()}. Если у вас есть желание можете изменить цвет своего имени здесь ${member.guild.channels.cache.get(color).toString()}, а чтобы выбрать пол зайдите сюда ${member.guild.channels.cache.get(gender).toString()}. Также можете оставить отзыв здесь ${member.guild.channels.cache.get(otzw).toString()}. Желаю вам приятного времяпровождения на нашем сервере!:kissing_heart:▨**`)
     .setColor('#f5ec42')
