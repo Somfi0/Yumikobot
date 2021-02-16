@@ -9,13 +9,19 @@ const { guild } = mess
 
 const {name, memberCount, owner} = guild
 const icon = guild.iconURL()
-
+ function checkDays(date) {
+        let now = new Date();
+        let diff = now.getTime() - date.getTime();
+        let days = Math.floor(diff / 86400000);
+        return days + (days == 1 ? " day" : " days") + " ago";
+    };
 const infembed = new Discord.MessageEmbed()
 .setColor('#f5ec42')
 .setTitle(`Информация о сервере ${name}`)
 .setThumbnail(icon)
 .setDescription(`**Участники:**\nВсего: ${mess.guild.members.cache.size}\nЛюдей: ${mess.guild.members.cache.filter(member => !member.user.bot).size}\nБотов: ${mess.guild.members.cache.filter(member => member.user.bot).size}`)
-
+.addField("Channels", mess.guild.channels.cache.size, true)
+.addField("Creation Date", `${mess.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(mess.channel.guild.createdAt)})`, true)
 mess.channel.send(infembed)
 };
 
