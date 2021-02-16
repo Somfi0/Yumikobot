@@ -9,6 +9,8 @@ const welcome = require('./welcome.js')
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `);
+        
+        welcome(client)
         client.user.setStatus("dnd")
         client.user.setPresence({
           status: "dnd",
@@ -17,7 +19,7 @@ client.on("ready", function () {
             name: "за сервером Yumiko"
           }
         })
-        welcome(client)
+        
     });
 
     client.on('message', (msg) => { // Реагирование на сообщения
