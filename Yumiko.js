@@ -9,15 +9,17 @@ const comms = require("./commands.js");
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `) 
-        client.user.setStatus("dnd")
-        client.user.setPresence({
-          status: "dnd",
-          activity: {
-            type: "WATCHING",
-            name: `за сервером Yumiko ${memberCount}`
+client.on('ready', () => {
+        setInterval(() => {
+          targetGuild = client.guilds.get('786844750912815125')
+          if(targetGuild) {
+              client.user.setPresence({ game: { name: targetGuild.memberCount + ' people verifying!', type: 'WATCHING' }, status: 'dnd'  })
+                    .then(console.log)
+                    .catch(console.error);
           }
-        })
-        
+    }, 1000 * 60 * 5);
+
+});
     });
 
 client.on('guildMemberAdd', (member) => {
