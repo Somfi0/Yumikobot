@@ -13,9 +13,13 @@ client.on('ready', () => {
         setInterval(() => {
           targetGuild = client.guilds.get('786844750912815125')
           if(targetGuild) {
-              client.user.setPresence({ game: { name: `Смотрит за сервером 𝘠𝘶𝘮𝘪𝘬𝘰 ${targetGuild.memberCount}`, type: 'WATCHING' }, status: 'dnd'  })
-                    .then(console.log)
-                    .catch(console.error);
+client.user.setPresence({
+          status: "dnd",
+          activity: {
+            type: "WATCHING",
+            name: `за сервером 𝘠𝘶𝘮𝘪𝘬𝘰 || На нем ${targetGuild.memberCount}`
+          }
+        })
           }
     }, 1000 * 60 * 5);
 
