@@ -1,7 +1,7 @@
 module.exports = client =>{
-client.on('guildMemberAdd', msg => { // Commands Go Inside The client.on('message', 
-msg => )
-msg.guild.channels.get('810941652004503563').send({embed: {
+client.on('guildMemberAdd', mess => { // Commands Go Inside The client.on('message', 
+mess => )
+mess.guild.channels.get('810941652004503563').send({embed: {
 color: 3447003,
 author: {
   name: client.user.username,
