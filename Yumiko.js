@@ -9,6 +9,7 @@ const comms = require("./commands.js");
 
 client.on("ready", function () {
         console.log(` Господин я ${client.user.tag} включилась!! `);
+        client.user.setStatus("dnd")
         client.user.setPresence({
           status: "dnd",
           activity: {
@@ -16,10 +17,6 @@ client.on("ready", function () {
             name: "за сервером 𝘠𝘶𝘮𝘪𝘬𝘰"
           }
         })
-          }
-    }, 1000 * 60 * 5);
-
-});
     });
 
 client.on('guildMemberAdd', (member) => {
