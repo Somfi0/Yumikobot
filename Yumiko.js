@@ -21,7 +21,7 @@ client.on("ready", function () {
     });
 
 client.on('guildMemberAdd', (member) => {
-    let chanellId = '786864575797919795';
+    let chanellId = '811247441666899968';
     let rules = '786897035457724436';
     let chat = '786858058323722241';
     let color = '805885775764783154';
