@@ -4,7 +4,6 @@ module.exports = client => {
 client.on('guildMemberAdd', (member) => {
     console.log.(member)
   
-  const channel = member.guild.channels.cache.get(channelId)
     const welcomemess = new Discord.MessageEmbed()
         welcomemess.setColor('#5cf000')
     welcomemess.setTitle('**' + member.user.username + '** is now Among Us other **' + member.guild.memberCount + '** people')
