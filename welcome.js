@@ -1,16 +1,13 @@
 module.exports = client => {
- const channelId = '810941652004503563'
-    
-client.on('guildMemberAdd', (member) => {
-    console.log(member)
-	const channel = member.guild.channels.cache.get(channelId)
-    channel.send(welcomemsg)
-
-      let welcomemsg = new Discord.MessageEmbed()
-      welcomemsg.setColor('#0099ff')
-	welcomemsg.setTitle('Some title')
-	welcomemsg.setDescription('Some description here')
-    
-    
-})
+	
+     client.on('guildMemberAdd', async newMember =>{
+     const channelId = '810941652004503563'
+     const welchannel = newMember.guild.channels.cache.get(channelId)
+     let welcmsg = new Discord.MessageEmbed()
+     welchannel.send(welcmsg)
+             let welcmsg = new Discord.MessageEmbed()
+             .setColor('#f5ec42')
+             .setTitle('Jeb')
+     welchannel.send(welcmsg)
+     });
 }
