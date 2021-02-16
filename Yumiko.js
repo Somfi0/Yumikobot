@@ -8,10 +8,7 @@ const comms = require("./commands.js");
 
 
 client.on("ready", function () {
-        console.log(` Господин я ${client.user.tag} включилась!! `)
-        
-        welcome(client)
-        
+        console.log(` Господин я ${client.user.tag} включилась!! `)       
         client.user.setStatus("dnd")
         client.user.setPresence({
           status: "dnd",
