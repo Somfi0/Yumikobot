@@ -5,12 +5,11 @@ client.on('guildMemberAdd', (member) => {
     console.log.(member)
   
   const channel = member.guild.channels.cache.get(channelId)
-  mess.guild.channels.get(channelId).send({embed: {
-      color: ("#f5ec42"),
-    title: "Приветствую на 𝘠𝘶𝘮𝘪𝘬𝘰",
-    description: ("вв"),
-    "image": {
-      "url": "https://media.discordapp.net/attachments/751078000430284912/805450212298326016/image_860911170005395524955.gif"
-  }
+    const welcomemess = new Discord.MessageEmbed()
+        welcomemess.setColor('#5cf000')
+    welcomemess.setTitle('**' + member.user.username + '** is now Among Us other **' + member.guild.memberCount + '** people')
+    welcomemess.setImage('https://cdn.mos.cms.futurecdn.net/93GAa4wm3z4HbenzLbxWeQ-650-80.jpg.webp')
+
+    member.guild.channels.cache.find(i => i.name === 'greetings').send(welcomemess)
 })
 }
