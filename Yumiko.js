@@ -8,13 +8,14 @@ const comms = require("./commands.js");
 
 
 client.on("ready", function () {
-        console.log(` Господин я ${client.user.tag} включилась!! `)  
-        client.user.setStatus("dnd")
+        console.log(` Господин я ${client.user.tag} включилась!! `) 
+        let guild = '786844750912815125'
+        client.user.setStatus("idk")
         client.user.setPresence({
-          status: "dnd",
+          status: "idk",
           activity: {
             type: "WATCHING",
-            name: `за сервером Yumiko ${memberCount}`
+            name: `за сервером Yumiko ${guild.memberCount}`
           }
         })
         
