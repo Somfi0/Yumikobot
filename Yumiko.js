@@ -14,7 +14,7 @@ client.on("ready", function () {
           status: "dnd",
           activity: {
             type: "WATCHING",
-            name: "за сервером Yumiko"
+            name: `за сервером Yumiko ${guild.memberCount}`
           }
         })
         
