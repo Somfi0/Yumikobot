@@ -33,7 +33,7 @@ client.on('guildMemberAdd', (member) => {
     .setColor('#f5ec42')
     .setImage('https://media.discordapp.net/attachments/751078000430284912/805450212298326016/image_860911170005395524955.gif')
     .setTimestamp()
-    client.author.send(embed)
+    client.channels.cache.get(chanellId).send(embed)
 });
 
     client.on('message', (msg) => { // Реагирование на сообщения
